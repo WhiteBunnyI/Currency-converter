@@ -1,0 +1,8 @@
+services:
+  web:
+    image: python:3.9.21
+    build: ./src/Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src/app:/app
