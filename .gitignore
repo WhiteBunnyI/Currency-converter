@@ -1,3 +1,4 @@
 /actions-runner/
 /.github/
 /.vscode/
+/.pytest_cache/
