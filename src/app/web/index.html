@@ -6,11 +6,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header id="heads">Хедер</header>
-    <form id="center">
-        <input type="number" min="0" id="first">
-        <input type="number" min="0" id="second">
-    </form>
-    <footer id="heads">Футер</footer>
+    <header class="flex-container heads">
+        <span>Конвертер валюты</span>
+        <span>значок</span>
+    </header>
+
+    <div class="flex-container currency-value center">
+        <input type="number" min="0" id="first-input" placeholder="Значение">
+        <input type="number" min="0" id="second-input" placeholder="Значение">
+    </div>
+
+    <div class="flex-container currency center">
+        <input list="currency" class="currency" id="first-currency" type="text" placeholder="Валюта">
+        <input list="currency" class="currency" id="second-currency" type="text" placeholder="Валюта">
+        
+        <datalist id="currency">
+            <option value="USD"></option>
+            <option value="RUB"></option>
+        </datalist>
+    </div>
+
+    <footer class="flex-container heads">
+        <a href="https://github.com/WhiteBunnyI/Currency-converter/tree/main">Github</a>
+    </footer>
 </body>
 </html>
