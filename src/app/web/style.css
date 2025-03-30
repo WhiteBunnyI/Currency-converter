@@ -10,6 +10,12 @@ body
     padding: 0;
 }
 
+img.arrows
+{
+    width: 30%;
+    height: auto;
+}
+
 div
 {
     position: relative;
@@ -44,24 +50,36 @@ a[href]
 input
 {
     background-color: white;
-    font-size: 2em;
-    width: 35dvw;
+    font-size: 1.5em;
+    width: 40%;
+    min-width: 320px;
+    max-width: 1400px;
+    min-height: 1.5em;
+    max-height: 100px;
     border-style: solid;
     border-width: 3px;
     border-color: black;
-    border-radius: 8px;
+    border-radius: .5em;
     position: relative;
 }
 
 .flex-container
 {
-    box-sizing: content-box;
+    box-sizing: border-box;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    margin: 1em;
-    padding: 0;
+    align-content: center;
+    width: 90%;
+    height: auto;
+    margin: 0;
+    padding: 1em;
+}
+
+div.flex-container
+{
+    justify-content: center;
     gap: 1em;
 }
 
@@ -71,48 +89,47 @@ input
     background-image: linear-gradient(to bottom, #250C50, #541CB6);
     text-align: center;
     color: white;
-    font-size: 3em;
+    font-size: 2em;
     height: 10%;
-    width: 90%;
+    width: 80%;
     padding: .5em;
     margin: 0;
 }
 
 .center-vert
 {
-    box-sizing: border-box;
     top: 30%;
     transform: translate(0, -50%);
 }
 
 .center-hor
 {
-    box-sizing: border-box;
     left: 50%;
     transform: translate(-50%, 0);
 }
 
-.material-symbols-outlined 
+.icon-button
 {
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 48,
+    border: none;
+    background: transparent;
+    padding: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
 }
 
 input.currency
 {
-    width: 18dvw;
-    height: 3dvh;
+    width: 40%;
+    max-width: 20%;
 }
 
 div.currency
 {
-    width: 60dvw;
+    width: 100%;
     justify-content: center;
     align-items: center;
-    
+    row-gap: 2em;
+    column-gap: 0;
 }
 
 
