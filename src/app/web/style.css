@@ -10,10 +10,19 @@ body
     padding: 0;
 }
 
+div
+{
+    position: relative;
+}
+
 header
 {
     background-image: linear-gradient(to bottom, #541CB6, #250C50);
-    top: 0px;
+    top: 0;
+    position: relative;
+    border-radius: 8px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
 
 footer
@@ -21,8 +30,10 @@ footer
     background-image: linear-gradient(to bottom, #250C50, #541CB6);
     bottom: 0;
     position: absolute;
+    border-radius: 8px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
-
 
 a[href]
 {
@@ -44,40 +55,64 @@ input
 
 .flex-container
 {
+    box-sizing: content-box;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    margin: 1em;
+    padding: 0;
+    gap: 1em;
 }
 
 .heads
 {
+    box-sizing: border-box;
     background-image: linear-gradient(to bottom, #250C50, #541CB6);
     text-align: center;
     color: white;
     font-size: 3em;
-    height: calc(10dvh - .5em * 2);
-    width: calc(100% - .5em * 2);
+    height: 10%;
+    width: 90%;
     padding: .5em;
     margin: 0;
 }
 
-.center
+.center-vert
 {
-    position: relative;
+    box-sizing: border-box;
     top: 30%;
+    transform: translate(0, -50%);
+}
+
+.center-hor
+{
+    box-sizing: border-box;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0);
+}
+
+.material-symbols-outlined 
+{
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48,
 }
 
 input.currency
 {
-    width: 17dvw;
+    width: 18dvw;
+    height: 3dvh;
 }
 
 div.currency
 {
-    width: 40dvw;
+    width: 60dvw;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 
