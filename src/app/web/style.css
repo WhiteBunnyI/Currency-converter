@@ -131,6 +131,15 @@ img.arrows
     max-width: 20dvw;
 }
 
+img.mobile-arrows
+{
+    width: 100%;
+    height: 10dvh;
+    transform: rotate(90deg);
+    min-width: 200px;
+    max-width: 20dvw;
+}
+
 input.currency
 {
     width: 20%;
