@@ -17,32 +17,33 @@
             >
         </button>
     </header>
-
-    <div class="flex-container currency-value center-vert center-hor">
-        <input type="number" min="0" id="first-input" placeholder="Значение">        
-        <img class="arrows"
-                src="./icons/arrows.svg" 
-                alt="Стрелочки"
-                aria-hidden="true"
-            >
-        <input type="number" min="0" id="second-input" placeholder="Значение">
-    </div>
-
-    <div class="flex-container currency center-vert center-hor">
-        <input list="currency" class="currency" id="first-currency" type="text" placeholder="Валюта">
-        <button class="icon-button">
-            <img 
-                src="./icons/cached.svg" 
-                alt="Поменять местами"
-                aria-hidden="true"
-            >
-        </button>
-        <input list="currency" class="currency" id="second-currency" type="text" placeholder="Валюта">
-        
-        <datalist id="currency">
-            <option value="USD"></option>
-            <option value="RUB"></option>
-        </datalist>
+    <div class="flex-container center-vert center-hor">
+        <div class="flex-container currency-value">
+            <input type="number" min="0" id="first-input" placeholder="Значение">        
+            <img class="arrows"
+                    src="./icons/arrows.svg" 
+                    alt="Стрелочки"
+                    aria-hidden="true"
+                >
+            <input type="number" min="0" id="second-input" placeholder="Значение">
+        </div>
+    
+        <div class="flex-container currency">
+            <input list="currency" class="currency" id="first-currency" type="text" placeholder="Валюта">
+            <button class="icon-button">
+                <img 
+                    src="./icons/cached.svg" 
+                    alt="Поменять местами"
+                    aria-hidden="true"
+                >
+            </button>
+            <input list="currency" class="currency" id="second-currency" type="text" placeholder="Валюта">
+            
+            <datalist id="currency">
+                <option value="USD"></option>
+                <option value="RUB"></option>
+            </datalist>
+        </div>
     </div>
 
     <footer class="flex-container heads center-hor">

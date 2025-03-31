@@ -142,7 +142,8 @@ img.mobile-arrows
 
 input.currency
 {
-    width: 20%;
+    width: 2dvw;
+    min-width: 15dvw;
     max-width: 20dvw;
 }
 
