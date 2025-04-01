@@ -47,7 +47,8 @@ input
 {
     background-color: white;
     font-size: 1.5em;
-    width: 40%;
+    width: auto;
+    height: auto;
     min-width: 320px;
     max-width: 30dvw;
     min-height: 5dvh;
@@ -86,6 +87,8 @@ input[type="number"]::-webkit-inner-spin-button {
 
 div.flex-container
 {
+    height: auto;
+    width: auto;
     justify-content: center;
     gap: 1em;
 }
@@ -149,7 +152,8 @@ input.currency
 
 div.currency
 {
-    width: 100%;
+    width: auto;
+    height: auto;
     justify-content: center;
     align-items: center;
     row-gap: 2em;

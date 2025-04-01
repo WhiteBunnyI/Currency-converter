@@ -1,3 +1,5 @@
+let minDesktopResolution = 1000;
+
 let isInit = false;
 let isMobile = false;
 let currency_value = null;
@@ -13,6 +15,7 @@ function initialization()
     currency_value = document.querySelector("div.flex-container.currency-value");
     switchCurrency = document.querySelector("div.flex-container.currency img");
     isInit = true;
+    setDesktop();
     check_resolution();
 }
 
@@ -20,12 +23,12 @@ function check_resolution()
 {
     if(!isInit) return;
 
-    if(!isMobile && window.innerWidth < 1000)
+    if(!isMobile && window.innerWidth < minDesktopResolution)
     {
         setMobile();
         console.log("Ставим мобильную версию...");
     }
-    else if(isMobile && window.innerWidth >= 1000)
+    else if(isMobile && window.innerWidth >= minDesktopResolution)
     {
         setDesktop();
         console.log("Ставим десктопную версию...");
