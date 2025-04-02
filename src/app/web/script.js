@@ -9,6 +9,11 @@ let switchCurrency = null;
 document.addEventListener("DOMContentLoaded", initialization);
 window.addEventListener("resize", check_resolution);
 
+function print(message)
+{
+    console.log(message);
+}
+
 function initialization()
 {
     arrows = document.querySelector("div.flex-container.currency-value img.arrows");
@@ -17,21 +22,22 @@ function initialization()
     isInit = true;
     setDesktop();
     check_resolution();
+    print("Инициализация завершена!");
 }
 
 function check_resolution()
 {
     if(!isInit) return;
 
-    if(!isMobile && window.innerWidth < minDesktopResolution)
+    if(!isMobile && window.outerWidth < minDesktopResolution)
     {
         setMobile();
-        console.log("Ставим мобильную версию...");
+        print("Ставим мобильную версию...");
     }
-    else if(isMobile && window.innerWidth >= minDesktopResolution)
+    else if(isMobile && window.outerWidth >= minDesktopResolution)
     {
         setDesktop();
-        console.log("Ставим десктопную версию...");
+        print("Ставим десктопную версию...");
     }
 }
 
