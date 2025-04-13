@@ -10,40 +10,46 @@
     <header class="flex-container heads center-hor">
         <span>Конвертер валюты</span>
         <button class="icon-button">
-            <img 
-                src="./icons/settings.svg" 
+            <img
+                src="./icons/settings.svg"
                 alt="Настройки"
                 aria-hidden="true"
             >
         </button>
     </header>
     <div class="flex-container center-vert center-hor">
-        <div class="flex-container currency-value">
-            <input type="number" min="0" id="first-input" placeholder="Значение">        
-            <img class="arrows"
-                    src="./icons/arrows.svg" 
-                    alt="Стрелочки"
-                    aria-hidden="true"
-                >
-            <input type="number" min="0" id="second-input" placeholder="Значение">
-        </div>
-    
-        <div class="flex-container currency">
-            <input list="currency" class="currency" id="first-currency" type="text" placeholder="Валюта">
-            <button class="icon-button">
-                <img 
-                    src="./icons/cached.svg" 
-                    alt="Поменять местами"
-                    aria-hidden="true"
-                >
-            </button>
-            <input list="currency" class="currency" id="second-currency" type="text" placeholder="Валюта">
-            
-            <datalist id="currency">
-                <option value="USD"></option>
-                <option value="RUB"></option>
-            </datalist>
-        </div>
+        <form id="converterForm">
+            <div class="flex-container currency-value">
+                <input type="number" min="0" id="first-input" placeholder="Значение">
+                <img class="arrows"
+                        src="./icons/arrows.svg"
+                        alt="Стрелочки"
+                        aria-hidden="true"
+                    >
+                <input type="number" min="0" id="second-input" placeholder="Значение">
+            </div>
+
+            <div class="flex-container currency">
+                <input list="currency" class="currency" id="fromCurrency" type="text" placeholder="Валюта">
+                <button class="icon-button">
+                    <img
+                        src="./icons/cached.svg"
+                        alt="Поменять местами"
+                        aria-hidden="true"
+                    >
+                </button>
+                <input list="currency" class="currency" id="toCurrency" type="text" placeholder="Валюта">
+
+                <datalist id="currency">
+                    <option value="USD"></option>
+                    <option value="RUB"></option>
+                </datalist>
+            </div>
+
+            <div class="flex-container">
+                <button type="submit">Convert</button>
+            </div>
+        </form>
     </div>
 
     <footer class="flex-container heads center-hor">

@@ -7,6 +7,7 @@ let arrows = null;
 let switchCurrency = null;
 
 document.addEventListener("DOMContentLoaded", initialization);
+document.addEventListener("DOMContentLoaded", func);
 window.addEventListener("resize", check_resolution);
 
 function print(message)
@@ -44,7 +45,7 @@ function check_resolution()
 function setMobile()
 {
     isMobile = true;
-    
+
     currency_value.style.flexFlow = "column";
     currency_value.parentElement.style.flexFlow = "row";
 
@@ -66,3 +67,71 @@ function setDesktop()
 
     switchCurrency.parentElement.parentElement.style.flexFlow = "row";
 }
+
+function func() {
+    const elements = {
+        fromSelect: document.getElementById('fromCurrency'),
+        toSelect: document.getElementById('toCurrency'),
+        form: document.getElementById('converterForm'),
+        amountInput: document.getElementById('first-input'),
+        result: document.getElementById('second-input'),
+        list: document.getElementById('currency')
+    };
+
+    // Загрузка валют при старте
+    loadCurrencies(elements.fromSelect, elements.toSelect);
+
+    // Обработчик формы
+    elements.form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        handleConversion(elements);
+    });
+}
+
+function loadCurrencies(list) {
+    fetch('/rates')
+        .then(function(response) {
+            if (!response.ok) throw new Error('Network error');
+            return response.json();
+        })
+        .then(function(currencies) {
+            populateSelects(currencies, list);
+        })
+        .catch(function(error) {
+            alert('Failed to load currencies');
+        });
+}
+
+function handleConversion(elements) {
+    const requestData = {
+        from: elements.fromSelect.value,
+        to: elements.toSelect.value,
+        amount: elements.amountInput.value
+    };
+
+    fetch('/convert', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(requestData)
+    })
+    .then(function(response) {
+        if (!response.ok) throw new Error('Server error');
+        return response.json();
+    })
+    .then(function(data) {
+        if (data.error) throw new Error(data.error);
+        elements.result.value = `${data.result}`;
+    })
+    .catch(function(error) {
+        alert(error.message || 'Conversion failed');
+    });
+}
+
+function populateSelects(currencies, list) {
+     currencies.forEach(function(currency) {
+            const option = document.createElement('option');
+            option.value = currency.currency;
+            list.appendChild(option);
+        });
+}
+
