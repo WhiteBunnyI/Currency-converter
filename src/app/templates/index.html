@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Конвертер валюты</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header class="flex-container heads center-hor">
+        <span>Конвертер валюты</span>
+        <button class="icon-button">
+            <img src="{{ url_for('static', filename='icons/settings.svg') }}" alt="Настройки" aria-hidden="true">
+        </button>
+    </header>
+    <div class="flex-container center-vert center-hor">
+        <form id="converterForm">
+            <div class="flex-container currency-value">
+                <input type="number" min="0" id="first-input" placeholder="Значение">
+                <img class="arrows" src="{{ url_for('static', filename='icons/arrows.svg') }}" alt="Стрелочки" aria-hidden="true">
+                <input type="number" min="0" id="second-input" placeholder="Значение">
+            </div>
+
+            <div class="flex-container currency">
+                <input list="currency" class="currency" id="fromCurrency" type="text" placeholder="Валюта">
+                <button class="icon-button">
+                    <img
+                        src="{{ url_for('static', filename='icons/cached.svg') }}"
+                        alt="Поменять местами"
+                        aria-hidden="true"
+                    >
+                </button>
+            <input list="currency" class="currency" id="toCurrency" type="text" placeholder="Валюта">
+
+                <datalist id="currency">
+                    <option value="RUB"></option>
+                </datalist>
+            </div>
+
+            <div class="flex-container">
+                <button type="submit">Convert</button>
+            </div>
+        </form>
+    </div>
+
+    <footer class="flex-container heads center-hor">
+        <a href="https://github.com/WhiteBunnyI/Currency-converter/tree/main">Github</a>
+    </footer>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
