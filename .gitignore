@@ -3,4 +3,5 @@
 /.vscode/
 /.pytest_cache/
 /.idea/
+/.obsidian/
 __pycache__/

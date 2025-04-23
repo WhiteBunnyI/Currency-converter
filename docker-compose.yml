@@ -9,3 +9,4 @@ services:
       - FLASK_ENV=development
       - FLASK_APP=app.app:app
       - FLASK_DEBUG=1
+    command: ["python", "app/app.py"]
