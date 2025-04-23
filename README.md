@@ -25,3 +25,5 @@ docker-compose down
 ```
 docker-compose exec web flask import
 ```
+Для того, чтобы попасть на сайт, перейдите по адресу:
+http://127.0.0.1:5000
