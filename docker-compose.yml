@@ -2,8 +2,10 @@ services:
   web:
     build: ./src
     ports:
-      - "8080:80"
+      - "5000:5000"
     volumes:
-      - ./src:/app
+      - "./src:/app"
     environment:
-      FLASK_ENV: development
+      - FLASK_ENV=development
+      - FLASK_APP=app.app:app
+      - FLASK_DEBUG=1

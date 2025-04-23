@@ -9,7 +9,6 @@ app = Flask(__name__)
 CORS(app)
 DATABASE = 'currency.db'
 
-
 def get_db():
     db = getattr(g, '_database', None)
     if db is None:
@@ -53,7 +52,7 @@ def import_rates():
         rates[currency] = rate
 
     rates['EUR'] = 1.0
-
+    print(rates)
     db = get_db()
     cursor = db.cursor()
     cursor.execute('DELETE FROM currency_rates')
@@ -183,4 +182,6 @@ def index():
 
 if __name__ == '__main__':
     init_db()
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port='5000', debug=True)
+    import_rates()
+
