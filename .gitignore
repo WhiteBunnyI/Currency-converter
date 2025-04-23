@@ -1,7 +1,7 @@
 /actions-runner/
 /.github/
-/.vscode/
-/.pytest_cache/
-/.idea/
-/.obsidian/
+.vscode/
+.pytest_cache/
+.idea/
+.obsidian/
 __pycache__/
