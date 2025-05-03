@@ -17,13 +17,22 @@ docker-compose up -d
 ```
 docker-compose up -d --build
 ```
+
+
 Остановить контейнер:
 ```
 docker-compose down
 ```
+
 Обновить курс валют:
 ```
 docker-compose exec web flask import
 ```
+
+Запустить юнит-тесты:
+```
+pytest
+```
+
 Для того, чтобы попасть на сайт, запустите сервер и перейдите по адресу:
 http://127.0.0.1:5000
