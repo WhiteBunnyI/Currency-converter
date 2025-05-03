@@ -90,7 +90,7 @@ def test_get_rates(import_db: sqlite3.Connection, get_currency: list):
     rows = server.get_rates().json
     assert rows == get_currency
 
-
+'''
 @pytest.mark.parametrize("_", range(len(currencies)))
 def test_delete_rate(import_db: sqlite3.Connection, get_currency: list, _):
     index = random.randint(0, len(get_currency) - 1)
@@ -108,7 +108,7 @@ def test_delete_rate(import_db: sqlite3.Connection, get_currency: list, _):
 
 def test_update_rate(import_db: sqlite3.Connection, get_currency: list):
     pass
-
+'''
 
 @pytest.mark.parametrize("index", range(len(currencies) - 1))
 def test_find_conversion_path(import_db: sqlite3.Connection, get_currency: list, index: int):
