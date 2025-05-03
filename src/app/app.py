@@ -69,7 +69,7 @@ def get_rates():
     cursor.execute('SELECT * FROM currency_rates')
     return jsonify([dict(row) for row in cursor.fetchall()])
 
-
+''' Возможный задел на будущее
 @app.route('/rates/<currency>', methods=['DELETE'])
 def delete_rate(currency):
     db = get_db()
@@ -87,7 +87,7 @@ def update_rate(currency):
     cursor.execute('UPDATE currency_rates SET rate = ? WHERE currency = ?', (new_rate, currency))
     db.commit()
     return jsonify({'message': 'Updated'}), 200
-
+'''
 
 def find_conversion_path(from_curr, to_curr):
     db = get_db()
